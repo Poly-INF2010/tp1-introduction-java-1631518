@@ -48,7 +48,7 @@ public class Point2d extends AbstractPoint {
      * @return Translated point
      */
     public Point2d translate(Point2d translateVector) {
-        return translate(this.vector,translateVector.vector);
+        return translate(translateVector.vector);
     }
 
     /** TODO
@@ -68,8 +68,9 @@ public class Point2d extends AbstractPoint {
      * @return Rotated point
      */
     public Point2d rotate(Double angle) {
+        Double oldX = this.vector[X];
         this.vector[X]=Math.cos (angle)*this.vector[X]-Math.sin(angle)*this.vector[Y];
-        this.vector[Y]=Math.cos (angle)*this.vector[Y]+Math.sin(angle)*this.vector[X];
+        this.vector[Y]=Math.cos (angle)*this.vector[Y]+Math.sin(angle)*oldX;
         return this;
     }
 
@@ -111,7 +112,6 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d clone() {
-        return new Point2D(this.vector);
+        return new Point2d(this.vector);
     }
 }
-
