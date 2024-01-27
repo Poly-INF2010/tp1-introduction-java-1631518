@@ -7,5 +7,6 @@ public class Square extends Rectangle {
      */
     public Square(Double size) {
         super(0.0, 0.0);
+        size = size;
     }
 }

@@ -7,5 +7,6 @@ public class Circle extends Ellipse {
      */
     public Circle(Double radius) {
         super(0.0, 0.0);
+        radius = radius;
     }
 }

@@ -11,7 +11,8 @@ public class Rectangle extends BaseShape {
      * @param height Height of the rectangle
      */
     public Rectangle(Double width, Double height) {
-
+        width = width;
+        height = height;
     }
 
     /** TODO
@@ -27,7 +28,7 @@ public class Rectangle extends BaseShape {
      * @param coords The collection of 2D points
      */
     private Rectangle(Collection<Point2d> coords) {
-
+        coords = coords;
     }
 
     /** TODO
@@ -35,6 +36,6 @@ public class Rectangle extends BaseShape {
      */
     @Override
     public Rectangle clone() {
-        return null;
+        return new Rectangle(this.getCoords());
     }
 }
