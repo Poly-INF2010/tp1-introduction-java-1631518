@@ -11,14 +11,22 @@ public class Ellipse extends BaseShape {
      * @param heightDiameter Height of the Ellipse
      */
     public Ellipse(Double widthDiameter, Double heightDiameter) {
-        double j=0;
-        for (double i = -widthDiameter/2; i < widthDiameter/2; i+=.5) {
-            j=Math.sqrt((1-Math.pow(i,2)/Math.pow(widthDiameter,2))*Math.pow(heightDiameter,2));
-            this.add(new Point2d(i, j));
+        double ellipseEquationValue=0;
+        for (double i = -widthDiameter/2; i <= widthDiameter/2; i+=.5) {
+            for (double j = -heightDiameter/2; j <= heightDiameter/2; j+=.5){
+                ellipseEquationValue=Math.pow(i,2)/Math.pow(widthDiameter,2)+Math.pow(j,2)/Math.pow(heightDiameter,2);
+                if (ellipseEquationValue<=1) {
+                    this.add(new Point2d(i, j));
+                }
+            }
         }
-        for (double i = -widthDiameter/2; i < widthDiameter/2; i+=.5) {
-            j=-Math.sqrt((1-Math.pow(i,2)/Math.pow(widthDiameter,2))*Math.pow(heightDiameter,2));
-            this.add(new Point2d(i, j));
+        for (double i = -widthDiameter*3/8; i <= widthDiameter*3/8; i+=.5) {
+            for (double j = -heightDiameter*3/8; j <= heightDiameter*3/8; j+=.5){
+                ellipseEquationValue=Math.pow(i,2)/Math.pow(widthDiameter,2)+Math.pow(j,2)/Math.pow(heightDiameter,2);
+                if (ellipseEquationValue<=1) {
+                    this.remove(new Point2d(i, j));
+                }
+            }
         }
     }
 
