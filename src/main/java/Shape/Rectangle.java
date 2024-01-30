@@ -5,14 +5,16 @@ import Point.Point2d;
 import java.util.Collection;
 
 public class Rectangle extends BaseShape {
+
     /** TODO
      * Create a filled rectangle centered on (0, 0)
      * @param width Width of the rectangle
      * @param height Height of the rectangle
      */
     public Rectangle(Double width, Double height) {
-        for (double i = -width/2; i < width/2; i+=.5) {
-            for (double j = -height/2; j < height/2; j+=.5) {
+        double ECARTPOINT = 0.5;
+        for (double i = -width/2; i < width/2; i+= ECARTPOINT) {
+            for (double j = -height/2; j < height/2; j+= ECARTPOINT) {
                 this.add(new Point2d(i, j));
             }
         }
