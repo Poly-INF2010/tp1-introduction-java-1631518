@@ -32,14 +32,28 @@ public class Ellipse extends BaseShape {
 //                }
 //            }
 //        }
+        double ecartPoint = 0.5;
         double radiusFactor = 0.5;
         double removeFactor = 0.375;
-        generateEllipsePoints(widthDiameter, heightDiameter, radiusFactor, false);
-        generateEllipsePoints(widthDiameter, heightDiameter, removeFactor, true);
+        for (double i = (-widthDiameter * radiusFactor); i <= (widthDiameter * radiusFactor); i += ecartPoint) {
+            for (double j = (-heightDiameter * radiusFactor); j <= (heightDiameter * radiusFactor); j += ecartPoint) {
+                double ellipseEquationValue = Math.pow(i, 2) / Math.pow(widthDiameter, 2) + Math.pow(j, 2) / Math.pow(heightDiameter, 2);
+                if (ellipseEquationValue <= 1) {
+                    if(i <= (widthDiameter * removeFactor) && i > (-widthDiameter * removeFactor) && j <= (heightDiameter * removeFactor) && j > (-heightDiameter * removeFactor) ) {
+                        this.remove(new Point2d(i, j));
+                    }
+                    else {
+                        this.add(new Point2d(i, j));
+                    }
+                }
+            }
+        }
+
+        //generateEllipsePoints(widthDiameter, heightDiameter, radiusFactor, false);
+        //generateEllipsePoints(widthDiameter, heightDiameter, removeFactor, true);
     }
 
     private void generateEllipsePoints(Double widthDiameter, Double heightDiameter, double multplier, boolean remove) {
-
         double ecartPoint = 0.5;
         for (double i = (-widthDiameter * multplier); i <= (widthDiameter * multplier); i += ecartPoint) {
             for (double j = (-heightDiameter * multplier); j <= (heightDiameter * multplier); j += ecartPoint) {
