@@ -12,9 +12,9 @@ public class Rectangle extends BaseShape {
      * @param height Height of the rectangle
      */
     public Rectangle(Double width, Double height) {
-        double ECARTPOINT = 0.5;
-        for (double i = -width/2; i < width/2; i+= ECARTPOINT) {
-            for (double j = -height/2; j < height/2; j+= ECARTPOINT) {
+        double ecartPoint = 0.5;
+        for (double i = -width/2; i < width/2; i+= ecartPoint) {
+            for (double j = -height/2; j < height/2; j+= ecartPoint) {
                 this.add(new Point2d(i, j));
             }
         }
