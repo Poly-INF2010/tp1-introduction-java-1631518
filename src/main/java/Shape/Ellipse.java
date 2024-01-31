@@ -14,24 +14,6 @@ public class Ellipse extends BaseShape {
      * @param heightDiameter Height of the Ellipse
      */
     public Ellipse(Double widthDiameter, Double heightDiameter) {
-
-//        double ellipseEquationValue=0;
-//        for (double i = -widthDiameter/2; i <= widthDiameter/2; i+=.5) {
-//            for (double j = -heightDiameter/2; j <= heightDiameter/2; j+=.5){
-//                ellipseEquationValue=Math.pow(i,2)/Math.pow(widthDiameter,2)+Math.pow(j,2)/Math.pow(heightDiameter,2);
-//                if (ellipseEquationValue<=1) {
-//                    this.add(new Point2d(i, j));
-//                }
-//            }
-//        }
-//        for (double i = -widthDiameter*3/8; i <= widthDiameter*3/8; i+=.5) {
-//            for (double j = -heightDiameter*3/8; j <= heightDiameter*3/8; j+=.5){
-//                ellipseEquationValue=Math.pow(i,2)/Math.pow(widthDiameter,2)+Math.pow(j,2)/Math.pow(heightDiameter,2);
-//                if (ellipseEquationValue<=1) {
-//                    this.remove(new Point2d(i, j));
-//                }
-//            }
-//        }
         double ecartPoint = 0.5;
         double radiusFactor = 0.5;
         double removeFactor = 0.375;
@@ -40,26 +22,6 @@ public class Ellipse extends BaseShape {
                 double ellipseEquationValue = Math.pow(i, 2) / Math.pow(widthDiameter, 2) + Math.pow(j, 2) / Math.pow(heightDiameter, 2);
                 if (ellipseEquationValue <= 1) {
                     if(i <= (widthDiameter * removeFactor) && i > (-widthDiameter * removeFactor) && j <= (heightDiameter * removeFactor) && j > (-heightDiameter * removeFactor) ) {
-                        this.remove(new Point2d(i, j));
-                    }
-                    else {
-                        this.add(new Point2d(i, j));
-                    }
-                }
-            }
-        }
-
-        //generateEllipsePoints(widthDiameter, heightDiameter, radiusFactor, false);
-        //generateEllipsePoints(widthDiameter, heightDiameter, removeFactor, true);
-    }
-
-    private void generateEllipsePoints(Double widthDiameter, Double heightDiameter, double multplier, boolean remove) {
-        double ecartPoint = 0.5;
-        for (double i = (-widthDiameter * multplier); i <= (widthDiameter * multplier); i += ecartPoint) {
-            for (double j = (-heightDiameter * multplier); j <= (heightDiameter * multplier); j += ecartPoint) {
-                double ellipseEquationValue = Math.pow(i, 2) / Math.pow(widthDiameter, 2) + Math.pow(j, 2) / Math.pow(heightDiameter, 2);
-                if (ellipseEquationValue <= 1) {
-                    if (remove) {
                         this.remove(new Point2d(i, j));
                     }
                     else {
