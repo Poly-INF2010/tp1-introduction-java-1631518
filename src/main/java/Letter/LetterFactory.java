@@ -45,12 +45,12 @@ public final class LetterFactory {
      * @return BaseShape containing the letter B
      */
     public static BaseShape create_B() {
-        Rectangle verticalRectangle=new Rectangle(new Point2d(halfStripeThickness, maxHeight));
+        Rectangle verticalRectangle=new Rectangle(new Point2d(stripeThickness, maxHeight));
         Circle bEllipse= new Circle(halfMaxHeight);
         Circle bSecondEllipse= new Circle(halfMaxHeight);
 
-        bEllipse.translate(bEllipse.getCoords(),new Point2d(halfMaxWidth , -halfMaxHeight/ELLIPSE_RATIO));
-        bSecondEllipse.translate(bSecondEllipse.getCoords(),new Point2d(halfMaxWidth , +halfMaxHeight/ELLIPSE_RATIO));
+        bEllipse.translate(bEllipse.getCoords(),new Point2d(halfMaxWidth+halfStripeThickness , -halfMaxHeight/ELLIPSE_RATIO));
+        bSecondEllipse.translate(bSecondEllipse.getCoords(),new Point2d(halfMaxWidth+halfStripeThickness , +halfMaxHeight/ELLIPSE_RATIO));
 
         BaseShape bShape=new BaseShape();
         bShape.add(bEllipse);
