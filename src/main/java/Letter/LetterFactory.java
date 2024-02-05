@@ -33,11 +33,10 @@ public final class LetterFactory {
         leftRectangle.rotate(leftRectangle.getCoords(), Math.toRadians(leftRectangleRotationAngle));
         rightRectangle.rotate(rightRectangle.getCoords(), Math.toRadians(rightRectangleRotationAngle));
 
-        BaseShape aShape=new BaseShape();
-        aShape.add(leftRectangle);
-        aShape.add(rightRectangle);
-        aShape.add(middleRectangle);
-        return aShape;
+        return new BaseShape()
+                .add(leftRectangle)
+                .add(rightRectangle)
+                .add(middleRectangle);
     }
 
     /** TODO
@@ -52,11 +51,10 @@ public final class LetterFactory {
         lowerEllipse.translate(lowerEllipse.getCoords(),new Point2d(halfMaxWidth+halfStripeThickness , -halfMaxHeight/ellipseRatio));
         upperEllipse.translate(upperEllipse.getCoords(),new Point2d(halfMaxWidth+halfStripeThickness , +halfMaxHeight/ellipseRatio));
 
-        BaseShape bShape=new BaseShape();
-        bShape.add(lowerEllipse);
-        bShape.add(upperEllipse);
-        bShape.add(verticalRectangle);
-        return bShape;
+        return new BaseShape()
+            .add(lowerEllipse)
+            .add(upperEllipse)
+            .add(verticalRectangle);
     }
 
     /** TODO
@@ -72,11 +70,10 @@ public final class LetterFactory {
         lowerRectangle.translate(lowerRectangle.getCoords(),new Point2d(halfMaxWidth, -halfMaxHeight));
         upperRectangle.translate(upperRectangle.getCoords(),new Point2d(halfMaxWidth, +halfMaxHeight));
 
-        BaseShape cShape=new BaseShape();
-        cShape.add(lowerRectangle);
-        cShape.add(upperRectangle);
-        cShape.add(verticalRectangle);
-        return cShape;
+        return new BaseShape()
+            .add(lowerRectangle)
+            .add(upperRectangle)
+            .add(verticalRectangle);
     }
 
     /** TODO
@@ -94,12 +91,11 @@ public final class LetterFactory {
         middleRectangle.translate(middleRectangle.getCoords(),new Point2d(halfMaxWidth, noChange));
         upperRectangle.translate(upperRectangle.getCoords(),new Point2d(halfMaxWidth, +halfMaxHeight));
 
-        BaseShape eShape=new BaseShape();
-        eShape.add(verticalRectangle);
-        eShape.add(middleRectangle);
-        eShape.add(lowerRectangle);
-        eShape.add(upperRectangle);
-        return eShape;
+        return new BaseShape()
+            .add(verticalRectangle)
+            .add(middleRectangle)
+            .add(lowerRectangle)
+            .add(upperRectangle);
 
     }
 
@@ -115,11 +111,10 @@ public final class LetterFactory {
         secondVerticalRectangle.translate(secondVerticalRectangle.getCoords(),new Point2d(maxWidth, noChange));
         horizontalRectangle.translate(horizontalRectangle.getCoords(),new Point2d(halfMaxWidth, noChange));
 
-        BaseShape hShape=new BaseShape();
-        hShape.add(horizontalRectangle);
-        hShape.add(secondVerticalRectangle);
-        hShape.add(verticalRectangle);
-        return hShape;
+        return new BaseShape()
+            .add(horizontalRectangle)
+            .add(secondVerticalRectangle)
+            .add(verticalRectangle);
     }
 
     /** TODO
@@ -136,11 +131,10 @@ public final class LetterFactory {
         middleRectangle.translate(middleRectangle.getCoords(),new Point2d(halfMaxWidth, noChange));
         middleRectangle.rotate(middleRectangle.getCoords(), Math.toRadians(nLetterRectangleRotationAngle));
 
-        BaseShape nShape=new BaseShape();
-        nShape.add(leftRectangle);
-        nShape.add(middleRectangle);
-        nShape.add(rightRectangle);
-        return nShape;
+        return new BaseShape()
+            .add(leftRectangle)
+            .add(middleRectangle)
+            .add(rightRectangle);
     }
 
     /** TODO
