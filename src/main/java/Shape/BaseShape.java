@@ -66,8 +66,7 @@ public class BaseShape extends Transform implements Cloneable {
      */
     public BaseShape remove(Point2d coord) {
         this.coords.remove(coord);
-        BaseShape updatedBaseShape = new BaseShape(this.coords);
-        return updatedBaseShape;
+        return new BaseShape(this.coords);
     }
 
     /** TODO
@@ -77,8 +76,7 @@ public class BaseShape extends Transform implements Cloneable {
      */
     public BaseShape remove(BaseShape shape) {
         this.coords.removeAll(shape.getCoords());
-        BaseShape updatedBaseShape = new BaseShape(coords);
-        return updatedBaseShape;
+        return new BaseShape(coords);
     }
 
     /** TODO
@@ -88,8 +86,7 @@ public class BaseShape extends Transform implements Cloneable {
      */
     public BaseShape removeAll(Collection<Point2d> coords) {
         this.coords.removeAll(coords);
-        BaseShape updatedBaseShape = new BaseShape(this.coords);
-        return updatedBaseShape;
+        return new BaseShape(this.coords);
     }
 
     /** TODO
@@ -98,8 +95,7 @@ public class BaseShape extends Transform implements Cloneable {
      * @return Updated BaseShape
      * */
     public BaseShape replaceAll(Collection<Point2d> newCoords) {
-        BaseShape updatedBaseShape = new BaseShape(newCoords);
-        return updatedBaseShape;
+        return new BaseShape(newCoords);
     }
 
     /** TODO
@@ -154,8 +150,7 @@ public class BaseShape extends Transform implements Cloneable {
      * @return 2D Point containing the maximum X and Y coordinates of the shape
      */
     public Point2d getMaxCoord() {
-        Point2d maxCoord = new Point2d(this.getMaxX(), this.getMaxY());
-        return maxCoord;
+        return new Point2d(this.getMaxX(), this.getMaxY());
     }
 
     /** TODO
@@ -194,8 +189,7 @@ public class BaseShape extends Transform implements Cloneable {
      * @return 2D point containing the minimum X and Y coordinate of the shape
      */
     public Point2d getMinCoord() {
-        Point2d maxCoord = new Point2d(this.getMinX(), this.getMinY());
-        return maxCoord;
+        return new Point2d(this.getMinX(), this.getMinY());
     }
 
     /** TODO
