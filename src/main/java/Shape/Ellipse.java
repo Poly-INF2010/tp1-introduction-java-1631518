@@ -21,8 +21,9 @@ public class Ellipse extends BaseShape {
             for (double j = (-heightDiameter * radiusFactor); j <= (heightDiameter * radiusFactor); j += ecartPoint) {
              double ellipseEquationValueAdd = Math.pow(i,2)/Math.pow(widthDiameter/2,2)+Math.pow(j,2)/Math.pow(heightDiameter/2,2);
              if (ellipseEquationValueAdd <= 1) {
-                double ellipseEquationValueRemove = Math.pow(i,2)/Math.pow(widthDiameter*3/8,2)+Math.pow(j,2)/Math.pow(heightDiameter*3/8,2);                     if(i <= (widthDiameter * removeFactor) && i > (-widthDiameter * removeFactor) && j <= (heightDiameter * removeFactor) && j > (-heightDiameter * removeFactor) && ellipseEquationValueRemove <= 1 ) {
-                this.remove(new Point2d(i, j));
+                double ellipseEquationValueRemove = Math.pow(i,2)/Math.pow(widthDiameter*3/8,2)+Math.pow(j,2)/Math.pow(heightDiameter*3/8,2);                     
+                if(i <= (widthDiameter * removeFactor) && i > (-widthDiameter * removeFactor) && j <= (heightDiameter * removeFactor) && j > (-heightDiameter * removeFactor) && ellipseEquationValueRemove <= 1 ) {
+                    this.remove(new Point2d(i, j));
                 }
                 else {
                     this.add(new Point2d(i, j));
