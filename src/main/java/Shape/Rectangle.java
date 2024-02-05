@@ -12,11 +12,15 @@ public class Rectangle extends BaseShape {
      * @param height Height of the rectangle
      */
     public Rectangle(Double width, Double height) {
-        double radiusFactor = 0.5;
-        for (double i = (int)(-width*radiusFactor); i < (int)(width*radiusFactor); i+= radiusFactor) {
-            for (double j =(int)(-height*radiusFactor); j <(int)(height*radiusFactor); j+= radiusFactor) {
+        double ecartPoint = 0.5;
+        double i = (-width * ecartPoint);
+        for (int n = 0; n <= width/ecartPoint; n++) {
+            double j = (-height * ecartPoint);
+            for (int k = 0; k <= height/ecartPoint; k++) {
                 this.add(new Point2d(i, j));
+                j+=ecartPoint;
             }
+            i+=ecartPoint;
         }
     }
 
