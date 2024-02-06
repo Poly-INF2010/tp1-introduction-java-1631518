@@ -48,8 +48,8 @@ public final class LetterFactory {
         Circle lowerEllipse= new Circle(halfMaxHeight);
         Circle upperEllipse= new Circle(halfMaxHeight);
 
-        lowerEllipse.translate(lowerEllipse.getCoords(),new Point2d(halfMaxWidth+halfStripeThickness , -halfMaxHeight/ellipseRatio));
-        upperEllipse.translate(upperEllipse.getCoords(),new Point2d(halfMaxWidth+halfStripeThickness , +halfMaxHeight/ellipseRatio));
+        lowerEllipse.translate(lowerEllipse.getCoords(),new Point2d(stripeThickness+halfStripeThickness , -halfMaxHeight/ellipseRatio));
+        upperEllipse.translate(upperEllipse.getCoords(),new Point2d(stripeThickness+halfStripeThickness , +halfMaxHeight/ellipseRatio));
 
         return new BaseShape()
             .add(lowerEllipse)
@@ -105,10 +105,10 @@ public final class LetterFactory {
      */
     public static BaseShape create_H() {
         Point2d rectangle_dimensions=new Point2d(maxWidth, halfStripeThickness);
-        Rectangle horizontalRectangle =new Rectangle(rectangle_dimensions);
         Rectangle verticalRectangle=new Rectangle(new Point2d(halfStripeThickness, maxHeight));
-        Rectangle secondVerticalRectangle=verticalRectangle.clone();
+        Rectangle secondVerticalRectangle= verticalRectangle.clone();
         secondVerticalRectangle.translate(secondVerticalRectangle.getCoords(),new Point2d(maxWidth, noChange));
+        Rectangle horizontalRectangle =new Rectangle(rectangle_dimensions);
         horizontalRectangle.translate(horizontalRectangle.getCoords(),new Point2d(halfMaxWidth, noChange));
 
         return new BaseShape()
