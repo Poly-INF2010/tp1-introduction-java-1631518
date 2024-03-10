@@ -1,0 +1,7 @@
+Points	5/5
+Formes	5/5
+Lettres	4/5
+Qualité de code et Design	4/5
+Total	18/20
+
+La lettre C doit être basée sur une ellipse
